@@ -1,0 +1,35 @@
+{
+  "name": "asset-management-ncrs",
+  "version": "0.1.0",
+  "description": "Asset Management and News Content Repository System",
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "frontend",
+    "shared/*"
+  ],
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:services\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:services": "concurrently \"npm run dev --workspace=services/api-gateway\" \"npm run dev --workspace=services/auth-service\"",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "postinstall": "husky install"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}
