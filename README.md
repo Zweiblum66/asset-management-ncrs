@@ -62,4 +62,8 @@ Please refer to the [development documentation](docs/development/README.md) for 
 
 ## License
 
+<<<<<<< HEAD
 This project is proprietary software.
+=======
+This project is proprietary software.
+>>>>>>> d0f6b87ce11a50c4768e5284c5c8fba3ff53f089
